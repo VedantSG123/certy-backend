@@ -1,4 +1,4 @@
-#Certy Api
+# Certy Api
 For this api to work, python and following python libraries must be installed on your machine:
 
 -   pandas
@@ -6,13 +6,13 @@ For this api to work, python and following python libraries must be installed on
 -   pymongo
 -   bson
 
-###Get Credentials
+### Get Credentials
 To use Google Sheets link, you will require a service account and a credentials file. Visit the following link for further details.
 [Create Credentials for Service Account](https://developers.google.com/workspace/guides/create-credentials#create_credentials_for_a_service_account)
 
 Paste the credentials file in Routes>GoogleSheetsAPI>creds.json.
 
-###Database Handling
+### Database Handling
 Go to Routes>MongoDB, replace the database link with your own database link.
 
 ```
@@ -23,7 +23,7 @@ mongoose.connect("your databse link", {
 
 The above changes should be done in both the files 'certificate.js' and 'certy_zips.js' inside Routes>MongoDB folder.
 
-###Generating certificates using post requests
+### Generating certificates using post requests
 For generating a certficate, you will require either the google sheet link or the excel file containing data and also a template ID. The ID for each template in the name of the certificate templates stored inside the 'Templates' folder (without the extention name).
 Make a post request on the route `/certy_googleSheet`
 
@@ -107,7 +107,7 @@ For Example:
 
 Response will be the same as stated earlier and process for getting the respective zip file will be the same.
 
-###Verification
+### Verification
 Each generated certificate will have a 16 character id printed at some corner of the certificate. For verifying a certifcate make a get request on `/verifiy` route with query as `uid=certificateID`
 
 For Example:
